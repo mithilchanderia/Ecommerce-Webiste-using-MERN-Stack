@@ -1,0 +1,60 @@
+[
+	{
+		"name": "SanDisk Ultra 128gb SDXC UHS-I Memory Card upto 90MB/s",
+		"price": "45.89",
+		"description": "Ultra-fast cards (2) to take better pictures and Full HD Videos (1) with your compact to mid-range point and shoot cameras and camrecorders. With SanDisk Ultra SDXC UHS-I cards you'll benefit from faster downloads, high capacity, and better performance to capture and store 128GB (5) of high quality pictures and Full HD Video. (1) Take advantage of ultra-fast read speeds of upto 80 MB/s ti save time moving photos and videos from card to your computer. From a leader in flash memory storage, SanDisk Ultra SDXC UHS-I cards are compatible with SDHC and SDXC digital devices, and come with a 10-year limited warranty (6)",
+		"ratings": 4.5,
+		"images": [
+			{
+				"public_id": "Ekart/Products/51PcTs-jCML._SL1000__twpuxh",
+				"url": "https://res.cloudinary.com/fragout/image/upload/v1616330522/Ekart/Products/51PcTs-jCML._SL1000__twpuxh.jpg"
+			}
+		],
+		"category": "Electronics",
+		"seller": "Ebay",
+		"stock": 50,
+		"numOfReviews": 0,
+		"reviews": [],
+		"user": "605b655d0d0293076059cb09"
+	},
+	{
+		"name": "Timios Apple And Cinnamon Melts Healthy & Natural Baby Food 9+ Months - Pack Of 2",
+		"price": "224",
+		"description": "Timios melts are the perfect ‘pick and eat’ snacks for your super babies, 9 months of age. We made this non-fried, wholegrain snack, keeping in mind the nourishment and appetite of your little ones. Our melts are free from junk, made with 100% natural and real ingredients, like whole grains, fruits, vegetables, and mild seasoning – absolutely safe and perfectly healthy for your babies.",
+		"ratings": 3.0,
+		"images": [
+			{
+				"public_id": "Ekart/Products/food2_fie2dr",
+				"url": "https://res.cloudinary.com/fragout/image/upload/v1616332711/Ekart/Products/food2_fie2dr.jpg"
+			},
+			{
+				"public_id": "Ekart/Products/food1_egb6tq",
+				"url": "https://res.cloudinary.com/fragout/image/upload/v1616332711/Ekart/Products/food1_egb6tq.jpg"
+			}
+		],
+		"category": "Food",
+		"seller": "Ebay",
+		"stock": 100,
+		"numOfReviews": 0,
+		"reviews": [],
+		"user": "605b655d0d0293076059cb09"
+	},
+	{
+		"name": "Lenovo Yoga 6 AMD Ryzen 7 4700U 13.3-inch Full HD IPS 2-in-1 Touchscreen Laptop (16GB/512GB SSD)",
+		"price": "999.99",
+		"description": "Featuring a premium textile cover, the Lenovo™ Yoga™ 6 is an ultra-portable 2-in-1 that combines unique style with the powerful responsiveness of an AMD Ryzen™ 4000 Series Mobile Processor and abundant memory and SSD storage options. Enjoy a rich multimedia experience with the clarity of a 13.3 inches FHD display, and enveloping sound with Dolby Atmos®- optimized stereo speakers.",
+		"ratings": 4.0,
+		"images": [
+			{
+				"public_id": "Ekart/Products/laptop_afcnxk",
+				"url": "https://res.cloudinary.com/fragout/image/upload/v1616333075/Ekart/Products/laptop_afcnxk.jpg"
+			}
+		],
+		"category": "Laptop",
+		"seller": "Apparial",
+		"stock": 10,
+		"numOfReviews": 0,
+		"reviews": [],
+		"user": "605b655d0d0293076059cb09"
+	}
+]
