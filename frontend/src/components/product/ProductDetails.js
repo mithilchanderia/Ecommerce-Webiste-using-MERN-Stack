@@ -15,20 +15,14 @@ const ProductDetails = ({ match }) => {
 		state => state.productDetails
 	);
 
-	useEffect(
-		() => {
-			dispatch(getProductDetails(match.params.id));
+	useEffect(() => {
+		dispatch(getProductDetails(match.params.id));
 
-			if (error) {
-				alert.error(error);
-				dispatch(clearErrors());
-			}
-		},
-		[dispatch],
-		alert,
-		error,
-		match.params.id
-	);
+		if (error) {
+			alert.error(error);
+			dispatch(clearErrors());
+		}
+	}, [dispatch, alert, error, match.params.id]);
 
 	return (
 		<Fragment>
