@@ -1,11 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { useAlert } from "react-alert";
+import React, { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "../../actions/cartActions";
 import MetaData from "../layout/MetaData";
 
-const Cart = () => {
+const Cart = ({ history }) => {
 	const dispatch = useDispatch();
 
 	const { cartItems } = useSelector(state => state.cart);
@@ -32,6 +31,10 @@ const Cart = () => {
 		dispatch(addItemToCart(id, newQty));
 	};
 
+	const checkoutHandler = () => {
+		history.push("/login?redirect=shipping");
+	};
+
 	return (
 		<Fragment>
 			<MetaData title={"Your Cart"} />
@@ -47,9 +50,9 @@ const Cart = () => {
 					<div className="row d-flex justify-content-between">
 						<div className="col-12 col-lg-8">
 							{cartItems.map(item => (
-								<Fragment>
+								<Fragment key={item.product}>
 									<hr />
-									<div className="cart-item" key={item.product}>
+									<div className="cart-item">
 										<div className="row">
 											<div className="col-4 col-lg-3">
 												<img
@@ -67,7 +70,7 @@ const Cart = () => {
 											</div>
 
 											<div className="col-4 col-lg-2 mt-4 mt-lg-0">
-												<p id="card_item_price">${item.price}</p>
+												<p id="card_item_price">₹{item.price}</p>
 											</div>
 
 											<div className="col-4 col-lg-3 mt-4 mt-lg-0">
@@ -134,7 +137,7 @@ const Cart = () => {
 								<p>
 									Est. total:{" "}
 									<span className="order-summary-values">
-										$
+										₹
 										{cartItems
 											.reduce(
 												(acc, item) => acc + item.quantity * item.price,
@@ -145,7 +148,11 @@ const Cart = () => {
 								</p>
 
 								<hr />
-								<button id="checkout_btn" className="btn btn-primary btn-block">
+								<button
+									id="checkout_btn"
+									className="btn btn-primary btn-block"
+									onClick={checkoutHandler}
+								>
 									Check out
 								</button>
 							</div>
