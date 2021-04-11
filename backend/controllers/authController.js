@@ -219,7 +219,6 @@ exports.allUsers = catchAsyncErrors(async (req, res, next) => {
 
 // Get user Details => api/v1/admin/user/:id
 exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
-	console.log(req);
 	const user = await User.findById(req.params.id);
 
 	if (!user) {

@@ -2,9 +2,11 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {
+	newProductReducer,
 	newReviewReducer,
 	productDetailsReducer,
-	ProductsReducer,
+	productReducer,
+	productsReducer,
 } from "./reducers/productReducers";
 import {
 	authReducer,
@@ -19,7 +21,7 @@ import {
 } from "./reducers/orderReducers";
 
 const reducer = combineReducers({
-	products: ProductsReducer,
+	products: productsReducer,
 	productDetails: productDetailsReducer,
 	auth: authReducer,
 	user: userReducer,
@@ -29,6 +31,8 @@ const reducer = combineReducers({
 	myOrders: myOrdersReducer,
 	orderDetails: orderDetailsReducer,
 	newReview: newReviewReducer,
+	newProduct: newProductReducer,
+	product: productReducer,
 });
 
 let initalState = {

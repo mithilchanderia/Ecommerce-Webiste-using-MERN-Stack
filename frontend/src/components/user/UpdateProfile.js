@@ -56,7 +56,6 @@ const UpdateProfile = ({ history }) => {
 		const reader = new FileReader();
 		reader.onload = () => {
 			if (reader.readyState === 2) {
-				console.log(reader);
 				setAvatarPreview(reader.result);
 				setAvatar(reader.result);
 			}
