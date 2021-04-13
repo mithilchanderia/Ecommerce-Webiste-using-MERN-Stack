@@ -6,25 +6,35 @@ import {
 	newReviewReducer,
 	productDetailsReducer,
 	productReducer,
+	productReviewsReducer,
 	productsReducer,
+	reviewReducer,
 } from "./reducers/productReducers";
 import {
+	allUsersReducer,
 	authReducer,
 	forgotPasswordReducer,
+	userDetailsReducer,
 	userReducer,
 } from "./reducers/userReducers";
 import { cartReducer } from "./reducers/cartReducers";
 import {
+	allOrdersReducer,
 	myOrdersReducer,
 	newOrderReducer,
 	orderDetailsReducer,
+	orderReducer,
 } from "./reducers/orderReducers";
 
 const reducer = combineReducers({
 	products: productsReducer,
 	productDetails: productDetailsReducer,
+	productReviews: productReviewsReducer,
+	review: reviewReducer,
 	auth: authReducer,
 	user: userReducer,
+	allUsers: allUsersReducer,
+	userDetails: userDetailsReducer,
 	forgotPassword: forgotPasswordReducer,
 	cart: cartReducer,
 	newOrder: newOrderReducer,
@@ -33,6 +43,8 @@ const reducer = combineReducers({
 	newReview: newReviewReducer,
 	newProduct: newProductReducer,
 	product: productReducer,
+	order: orderReducer,
+	allOrders: allOrdersReducer,
 });
 
 let initalState = {
