@@ -4,10 +4,10 @@ const sendToken = (user, statusCode, res) => {
 	//Create jwt Token
 	const token = user.getJwtToken();
 
-	//Optio for cookie
+	//Option for cookie
 	const options = {
 		expires: new Date(
-			Date.now() + process.env.COOKIE_EXPIRES_TIME * 24 * 60 * 60
+			Date.now() + process.env.COOKIE_EXPIRES_TIME * 24 * 60 * 60 * 1000
 		),
 		httpOnly: true,
 	};
