@@ -20,7 +20,9 @@ import {
 	UPDATE_ORDER_SUCCESS,
 } from "../constants/orderConstants";
 import axios from "axios";
+import { ORDER_SUCCESS } from "../constants/cartConstants";
 
+//Create an order
 export const createOrder = order => async (dispatch, getState) => {
 	try {
 		dispatch({ type: CREATE_ORDER_REQUEST });
@@ -30,8 +32,10 @@ export const createOrder = order => async (dispatch, getState) => {
 			},
 		};
 		const { data } = await axios.post("/api/v1/order/new", order, config);
-
 		dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
+		dispatch({ type: ORDER_SUCCESS });
+		localStorage.removeItem("cartItems");
+		localStorage.removeItem("shippingInfo");
 	} catch (error) {
 		dispatch({
 			type: CREATE_ORDER_FAIL,

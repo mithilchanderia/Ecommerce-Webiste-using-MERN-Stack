@@ -96,7 +96,7 @@ function App() {
 					/>
 
 					<ProtectedRoute path="/orders/me" component={ListOrders} exact />
-					<ProtectedRoute path="/order/:id" component={OrderDetails} exact />
+					<ProtectedRoute path="/myorder/:id" component={OrderDetails} exact />
 				</div>
 
 				<ProtectedRoute

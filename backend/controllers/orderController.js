@@ -17,6 +17,12 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
 		paymentInfo,
 	} = req.body;
 
+	const updateStock = async (id, quantity) => {
+		const product = await Product.findById(id);
+		product.stock -= quantity;
+		await product.save();
+	};
+
 	const order = await Order.create({
 		orderItems,
 		shippingInfo,
@@ -27,6 +33,10 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
 		paymentInfo,
 		paidAt: Date.now(),
 		user: req.user._id,
+	});
+
+	orderItems.forEach(item => {
+		updateStock(item.product, item.quantity);
 	});
 
 	res.status(200).json({

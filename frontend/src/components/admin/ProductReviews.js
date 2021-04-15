@@ -3,7 +3,6 @@ import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import MetaData from "../layout/MetaData";
 import { MDBDataTable } from "mdbreact";
-import Loader from "../layout/Loader";
 import {
 	getProductReviews,
 	clearErrors,
@@ -18,9 +17,7 @@ export const ProductReviews = () => {
 	const alert = useAlert();
 	const dispatch = useDispatch();
 
-	const { loading, error, reviews } = useSelector(
-		state => state.productReviews
-	);
+	const { error, reviews } = useSelector(state => state.productReviews);
 
 	const { isDeleted } = useSelector(state => state.review);
 

@@ -1,5 +1,6 @@
 import {
 	ADD_TO_CART,
+	ORDER_SUCCESS,
 	REMOVE_ITEM_CART,
 	SAVE_SHIPPING_INFO,
 } from "../constants/cartConstants";
@@ -36,6 +37,13 @@ export const cartReducer = (
 			return {
 				...state,
 				shippingInfo: action.payload,
+			};
+
+		case ORDER_SUCCESS:
+			return {
+				...state,
+				cartItems: [],
+				shippingInfo: {},
 			};
 		default:
 			return state;
