@@ -4,6 +4,7 @@ import Search from "./Search";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { logout } from "../../actions/userActions";
+import { CLEAR_ERRORS } from "../../constants/userConstants";
 
 const Header = () => {
 	const alert = useAlert();
@@ -88,7 +89,14 @@ const Header = () => {
 						</div>
 					) : (
 						!loading && (
-							<Link to="/login" className="btn ml-4" id="login_btn">
+							<Link
+								to="/login"
+								className="btn ml-4"
+								id="login_btn"
+								onClick={() => {
+									dispatch({ type: CLEAR_ERRORS });
+								}}
+							>
 								Login
 							</Link>
 						)

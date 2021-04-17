@@ -8,15 +8,26 @@ const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
 
-//Register a user => api/v1/register
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
-	const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
-		folder: "Ekart/Avatar",
-		width: 150,
-		crop: "scale",
-	});
+	let result = {};
+	if (!req.body.avatar) {
+		result.public_id = "Ekart/Avatar/bbuisvdxgfzhbx62ibwx";
+		result.secure_url =
+			"https://res.cloudinary.com/fragout/image/upload/v1617524493/Ekart/Avatar/bbuisvdxgfzhbx62ibwx.png";
+	} else {
+		result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+			folder: "Ekart/Avatar",
+			width: 150,
+			crop: "scale",
+		});
+	}
 
 	const { name, email, password } = req.body;
+
+	const userExists = await User.find({ email });
+	if (userExists) {
+		return next(new ErrorHandler("User already exists", 400));
+	}
 
 	const user = await User.create({
 		name,

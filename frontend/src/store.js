@@ -54,7 +54,7 @@ let initalState = {
 			: [],
 		shippingInfo: localStorage.getItem("shippingInfo")
 			? JSON.parse(localStorage.getItem("shippingInfo"))
-			: {},
+			: { address: "", city: "", phoneNo: "", postalCode: "", country: "" },
 	},
 };
 
