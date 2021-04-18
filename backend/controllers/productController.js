@@ -12,7 +12,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 	if (typeof req.body.images === "string") {
 		images.push(req.body.images);
 	} else {
-		imgaes = req.body.images;
+		images = req.body.images;
 	}
 
 	let imagesLinks = [];
