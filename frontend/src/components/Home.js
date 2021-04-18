@@ -17,7 +17,7 @@ const Home = ({ match }) => {
 	const dispatch = useDispatch();
 
 	const [currentPage, setCurrentPage] = useState(1);
-	const [price, setPrice] = useState([1, 1000]);
+	const [price, setPrice] = useState([1, 100000]);
 	const [category, setCategory] = useState("");
 	const [rating, setRating] = useState(0);
 
@@ -79,10 +79,10 @@ const Home = ({ match }) => {
 									<div className="col-6 col-md-3 mt-5 mb-5">
 										<div className="px-5">
 											<Range
-												marks={{ 1: `₹1`, 1000: `₹1000` }}
+												marks={{ 1: `₹1`, 100000: `₹100000` }}
 												min={1}
-												max={1000}
-												defaultValue={[1, 1000]}
+												max={100000}
+												defaultValue={[1, 100000]}
 												tipFormatter={value => `₹${value}`}
 												tipProps={{
 													placement: "top",
