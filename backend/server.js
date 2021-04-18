@@ -5,7 +5,6 @@ const cloudinary = require("cloudinary");
 const dotenv = require("dotenv");
 
 //handle the Uncaught exceptions
-
 process.on("uncaughtException", err => {
 	console.log(`ERROR: ${err.message}`);
 	console.log("Shutting down server due to uncaught exception");

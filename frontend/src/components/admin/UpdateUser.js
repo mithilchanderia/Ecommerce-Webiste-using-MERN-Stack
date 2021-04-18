@@ -6,6 +6,7 @@ import {
 	updateUser,
 	getUserDetails,
 	clearErrors,
+	loadUser,
 } from "../../actions/userActions";
 import { UPDATE_USER_RESET } from "../../constants/userConstants";
 import Sidebar from "./Sidebar";
@@ -52,6 +53,8 @@ const UpdateUser = ({ match, history }) => {
 		formData.set("email", email);
 		formData.set("role", role);
 		dispatch(updateUser(user._id, formData));
+		dispatch(loadUser());
+		dispatch(getUserDetails(user._id));
 	};
 	return (
 		<Fragment>

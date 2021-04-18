@@ -24,7 +24,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 
 	const { name, email, password } = req.body;
 
-	const userExists = await User.find({ email });
+	const userExists = await User.countDocuments({ email });
 	if (userExists) {
 		return next(new ErrorHandler("User already exists", 400));
 	}

@@ -160,6 +160,7 @@ export const updateProduct = (id, productData) => async dispatch => {
 			type: UPDATE_PRODUCT_SUCCESS,
 			payload: data.success,
 		});
+		dispatch(getProductDetails(id));
 	} catch (error) {
 		dispatch({
 			type: UPDATE_PRODUCT_FAIL,
